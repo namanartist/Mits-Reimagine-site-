@@ -7,108 +7,87 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-oxford/5 -skew-x-12 translate-x-1/4 -z-10" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold/10 rounded-full blur-3xl -z-10" />
-
-      <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-12 items-center">
+    <section className="px-4 sm:px-6 lg:px-8 py-16 md:py-24 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <motion.div 
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="space-y-8 relative"
+      >
+        <Sparkles className="absolute -top-8 -left-8 w-8 h-8 text-orange-300 opacity-50" />
+        <Sparkles className="absolute top-12 right-12 w-6 h-6 text-orange-300 opacity-50" />
+        
+        <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.9] tracking-tight">
+          2026 Admissions<br />
+          <span className="italic">Open Now</span>
+        </h1>
+        <p className="max-w-md text-black/70 leading-relaxed text-lg">
+          Madhav Institute of Technology & Science (MITS), Gwalior is a premier engineering institute offering B.Tech, M.Tech, Architecture, and Ph.D. programs to shape the innovators of tomorrow.
+        </p>
+        <div className="flex flex-wrap items-center gap-4">
+          <Link to="/admissions" className="px-6 py-3 border border-black rounded-full bg-[#f2e8e3] hover:bg-[#e8dcd5] transition-colors font-medium flex items-center gap-2">
+            Apply Now <ArrowRight className="w-4 h-4" />
+          </Link>
+          <Link to="/about" className="px-6 py-3 border border-black rounded-full hover:bg-black/5 transition-colors font-medium">
+            Explore Campus
+          </Link>
+        </div>
+        <div className="pt-8 border-t border-black/10 flex items-center gap-8">
+          <div>
+            <p className="font-serif text-3xl font-medium">25,000+</p>
+            <p className="text-sm text-black/60 uppercase tracking-wider">Alumni</p>
+          </div>
+          <div>
+            <p className="font-serif text-3xl font-medium">60+</p>
+            <p className="text-sm text-black/60 uppercase tracking-wider">Years of Legacy</p>
+          </div>
+        </div>
+      </motion.div>
+      <motion.div 
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="relative"
+      >
+        <div className="aspect-[4/5] rounded-[2rem] overflow-hidden border border-black/10 shadow-2xl">
+          <img 
+            src="https://www.collegebatch.com/static/clg-gallery/madhav-institute-of-technology-science-gwalior-300708.webp" 
+            alt="Campus Life" 
+            className="w-full h-full object-cover"
+          />
+        </div>
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="lg:col-span-7 space-y-10"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="absolute -bottom-6 -left-6 md:-left-12 bg-white p-6 rounded-3xl border border-black/10 shadow-xl max-w-xs"
         >
-          <div className="space-y-2">
-            <motion.p 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-gold font-bold uppercase tracking-[0.3em] text-sm"
-            >
-              Established 1957
-            </motion.p>
-            <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl leading-[0.85] tracking-tight text-oxford">
-              Shaping the <br />
-              <span className="italic font-light text-gold">Future</span> of <br />
-              Innovation.
-            </h1>
+          <div className="flex items-center gap-3 mb-2">
+            <Trophy className="w-5 h-5 text-orange-400" />
+            <h4 className="font-serif font-medium text-lg">Top Ranked</h4>
           </div>
-          
-          <p className="max-w-xl text-oxford/70 leading-relaxed text-lg md:text-xl font-light">
-            Madhav Institute of Technology & Science (MITS), Gwalior is a premier engineering institute dedicated to technical excellence and holistic development.
-          </p>
-
-          <div className="flex flex-wrap items-center gap-6 pt-4">
-            <Link to="/admissions" className="px-10 py-5 bg-oxford text-cream rounded-full font-medium hover:bg-oxford/90 transition-all shadow-xl shadow-oxford/20 flex items-center gap-3 group">
-              Apply for 2026 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link to="/about" className="px-10 py-5 border border-oxford/20 text-oxford rounded-full font-medium hover:bg-oxford/5 transition-all">
-              Explore Campus
-            </Link>
-          </div>
-
-          <div className="pt-12 grid grid-cols-3 gap-8 border-t border-oxford/10">
-            <div>
-              <p className="font-serif text-4xl text-oxford">A++</p>
-              <p className="text-xs uppercase tracking-widest text-oxford/40 font-bold mt-1">NAAC Grade</p>
-            </div>
-            <div>
-              <p className="font-serif text-4xl text-oxford">65+</p>
-              <p className="text-xs uppercase tracking-widest text-oxford/40 font-bold mt-1">Years Legacy</p>
-            </div>
-            <div>
-              <p className="font-serif text-4xl text-oxford">25k+</p>
-              <p className="text-xs uppercase tracking-widest text-oxford/40 font-bold mt-1">Global Alumni</p>
-            </div>
-          </div>
+          <p className="text-sm text-black/70">Consistently ranked among the top engineering colleges in Central India by NIRF.</p>
         </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="lg:col-span-5 relative"
-        >
-          <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
-            <img 
-              src="https://www.collegebatch.com/static/clg-gallery/madhav-institute-of-technology-science-gwalior-300708.webp" 
-              alt="MITS Campus" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-oxford/40 to-transparent" />
-          </div>
-          
-          {/* Floating badge */}
-          <motion.div 
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute -bottom-8 -left-8 md:-left-16 bg-cream p-8 rounded-[2.5rem] shadow-2xl border border-oxford/5 max-w-[240px]"
-          >
-            <Trophy className="w-10 h-10 text-gold mb-4" />
-            <h4 className="font-serif text-xl text-oxford leading-tight mb-2">Top Engineering Institute</h4>
-            <p className="text-xs text-oxford/60 leading-relaxed">Consistently ranked among the best in Central India by NIRF.</p>
-          </motion.div>
-        </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };
 
 const Marquee = () => {
   return (
-    <div className="py-6 border-y border-oxford/10 overflow-hidden flex items-center bg-white/50 backdrop-blur-sm">
+    <div className="py-4 border-y border-black overflow-hidden flex items-center bg-white/30 backdrop-blur-sm">
       <motion.div 
         animate={{ x: [0, -1035] }}
-        transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
-        className="flex whitespace-nowrap items-center gap-12"
+        transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
+        className="flex whitespace-nowrap items-center gap-8"
       >
-        {[...Array(6)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <React.Fragment key={i}>
-            <Sparkles className="w-5 h-5 text-gold" />
-            <span className="font-serif text-2xl italic text-oxford/80">Excellence in Technical Education since 1957</span>
-            <div className="w-2 h-2 rounded-full bg-oxford/20" />
-            <span className="font-sans text-sm uppercase tracking-[0.3em] font-bold text-oxford/40">Admissions Open 2026</span>
+            <Sparkles className="w-5 h-5" />
+            <span className="font-serif text-xl italic">Welcome to Madhav Institute of Technology & Science!</span>
           </React.Fragment>
         ))}
       </motion.div>
@@ -117,50 +96,53 @@ const Marquee = () => {
 };
 
 const Highlights = () => {
-  const highlights = [
-    {
-      icon: Briefcase,
-      stat: "95%",
-      label: "Placement Rate",
-      desc: "Top recruiters including TCS, Infosys, and Wipro visit annually."
-    },
-    {
-      icon: Award,
-      stat: "A++",
-      label: "NAAC Grade",
-      desc: "Recognized for excellence in teaching and research methodologies."
-    },
-    {
-      icon: Users,
-      stat: "250+",
-      label: "Expert Faculty",
-      desc: "Distinguished professors with extensive industry experience."
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 }
     }
-  ];
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
 
   return (
-    <section className="py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-3 gap-16">
-        {highlights.map((item, i) => (
-          <motion.div 
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.2 }}
-            className="space-y-6 group"
-          >
-            <div className="w-16 h-16 bg-oxford/5 rounded-2xl flex items-center justify-center group-hover:bg-gold/10 transition-colors">
-              <item.icon className="w-8 h-8 text-oxford group-hover:text-gold transition-colors" />
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-serif text-5xl text-oxford">{item.stat}</h3>
-              <p className="font-bold text-sm uppercase tracking-widest text-gold">{item.label}</p>
-            </div>
-            <p className="text-oxford/60 leading-relaxed">{item.desc}</p>
-          </motion.div>
-        ))}
-      </div>
+    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-b border-black/10">
+      <motion.div 
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="grid md:grid-cols-3 gap-12"
+      >
+        <motion.div variants={item} className="space-y-4">
+          <div className="w-12 h-12 bg-[#f2e8e3] rounded-full flex items-center justify-center mb-6">
+            <Briefcase className="w-6 h-6" />
+          </div>
+          <h3 className="font-serif text-4xl">95%</h3>
+          <p className="font-medium text-lg">Placement Rate</p>
+          <p className="text-black/70 text-sm">Top recruiters including TCS, Infosys, Wipro, and Cognizant visit our campus annually.</p>
+        </motion.div>
+        <motion.div variants={item} className="space-y-4">
+          <div className="w-12 h-12 bg-[#f2e8e3] rounded-full flex items-center justify-center mb-6">
+            <Award className="w-6 h-6" />
+          </div>
+          <h3 className="font-serif text-4xl">A++</h3>
+          <p className="font-medium text-lg">NAAC Accreditation</p>
+          <p className="text-black/70 text-sm">Recognized for excellence in teaching, learning, and research methodologies.</p>
+        </motion.div>
+        <motion.div variants={item} className="space-y-4">
+          <div className="w-12 h-12 bg-[#f2e8e3] rounded-full flex items-center justify-center mb-6">
+            <Users className="w-6 h-6" />
+          </div>
+          <h3 className="font-serif text-4xl">50+</h3>
+          <p className="font-medium text-lg">Expert Faculty</p>
+          <p className="text-black/70 text-sm">Learn from distinguished professors with extensive industry and academic experience.</p>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
@@ -168,9 +150,9 @@ const Highlights = () => {
 const QuickLinks = () => {
   const links = [
     { title: 'Admissions 2026', icon: GraduationCap, path: '/admissions' },
-    { title: 'Fee Structure', icon: FileText, path: '/admissions#fees' },
-    { title: 'Exam Results', icon: CheckCircle2, path: '/academics' },
-    { title: 'Downloads', icon: Download, path: '/student-life' },
+    { title: 'Fee Structure', icon: FileText, path: '/fee-structure' },
+    { title: 'Exam Results', icon: CheckCircle2, path: '/exam-results' },
+    { title: 'Downloads', icon: Download, path: '/downloads' },
   ];
 
   return (
@@ -211,7 +193,7 @@ const QuickLinks = () => {
         >
           <div className="flex items-center justify-between mb-8 pb-4 border-b border-black/10">
             <h3 className="font-serif text-2xl">Notice Board</h3>
-            <Link to="/about" className="text-sm font-medium hover:underline">View All</Link>
+            <Link to="/notice-board" className="text-sm font-medium hover:underline">View All</Link>
           </div>
           <div className="space-y-6">
             {[

@@ -11,6 +11,9 @@ import { GenericPage } from './pages/GenericPage';
 import { Tenders } from './pages/Tenders';
 import { Careers } from './pages/Careers';
 import { StyleGuide } from './pages/StyleGuide';
+import { ExamResults } from './pages/ExamResults';
+import { Downloads } from './pages/Downloads';
+import { FeeStructure } from './pages/FeeStructure';
 
 // Placeholder components for other routes
 const PlaceholderPage = ({ title }: { title: string }) => (
@@ -48,6 +51,9 @@ export default function App() {
           <Route path="alumni-portal" element={<GenericPage title="Alumni Portal" />} />
           <Route path="anti-ragging" element={<GenericPage title="Anti-Ragging" />} />
           <Route path="style-guide" element={<StyleGuide />} />
+          <Route path="exam-results" element={<ExamResults />} />
+          <Route path="downloads" element={<Downloads />} />
+          <Route path="fee-structure" element={<FeeStructure />} />
         </Route>
       </Routes>
     </Router>

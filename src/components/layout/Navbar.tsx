@@ -15,7 +15,7 @@ const NAV_LINKS = [
           { name: 'About MITS', path: '/about#about-institute' },
           { name: 'Vision & Mission', path: '/about#vision-mission' },
           { name: 'Governance', path: '/about#governance' },
-          { name: 'Director Message', path: '/about#director-message' },
+          { name: 'VC Message', path: '/about#vc-message' },
         ]
       },
       {
@@ -64,9 +64,9 @@ const NAV_LINKS = [
         title: 'Resources',
         links: [
           { name: 'Central Library', path: '/library' },
-          { name: 'Academic Calendar', path: '/academics#academic-calendar' },
-          { name: 'Exam Results', path: '/academics#results' },
-          { name: 'Syllabus', path: '/academics#syllabus' },
+          { name: 'Academic Calendar', path: '/downloads' },
+          { name: 'Exam Results', path: '/exam-results' },
+          { name: 'Downloads', path: '/downloads' },
         ]
       }
     ]
@@ -78,7 +78,7 @@ const NAV_LINKS = [
       {
         title: 'Apply',
         links: [
-          { name: 'Admission 2026', path: '/admissions#apply-now' },
+          { name: 'Admission 2026', path: '/admissions' },
           { name: 'Counseling Process', path: '/admissions#counseling' },
           { name: 'Entrance Exams', path: '/admissions#exams' },
         ]
@@ -86,7 +86,7 @@ const NAV_LINKS = [
       {
         title: 'Information',
         links: [
-          { name: 'Fee Structure', path: '/admissions#fee-structure' },
+          { name: 'Fee Structure', path: '/fee-structure' },
           { name: 'Scholarships', path: '/admissions#scholarships' },
           { name: 'Documents Required', path: '/admissions#documents' },
           { name: 'FAQs', path: '/admissions#faqs' },
